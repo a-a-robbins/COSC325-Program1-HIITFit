@@ -1,6 +1,6 @@
-// based off code from SwiftUI Apprentice
+//based off SwiftUI Apprentice
+//modified by: a-a-robbins
 
-// modified by: a-a-robbins
 
 import SwiftUI
 
