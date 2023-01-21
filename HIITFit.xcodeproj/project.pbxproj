@@ -55,8 +55,8 @@
 		49099A9829789A21009F3B90 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CD30C925251474DC0049DB93 /* ContentView.swift */,
 				49099A94297899C3009F3B90 /* WelcomeView.swift */,
+				CD30C925251474DC0049DB93 /* ContentView.swift */,
 				49099A96297899E7009F3B90 /* ExerciseView.swift */,
 				4963049B297C9F9F00595830 /* HeaderView.swift */,
 			);
