@@ -1,5 +1,3 @@
-//based off SwiftUI Apprentice
-//modified by: a-a-robbins
 
 import SwiftUI
 
@@ -8,12 +6,7 @@ struct HeaderView: View {
     var body: some View {
         VStack {
             Text(exerciseName)
-            Text("Video player")
-            Text("Timer")
-            Text("Start/Done button")
-            Text("Rating")
-            Text("History button")
-            
+                .font(.largeTitle)
             HStack {
                 Image(systemName: "1.circle")
                 Image(systemName: "2.circle")
@@ -27,6 +20,13 @@ struct HeaderView: View {
 
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView(exerciseName: "Squat") // preview doesn't need access to the exerciseNames array
+        Group {
+            HeaderView(exerciseName: "Squat")
+                .previewLayout(.sizeThatFits)
+            HeaderView(exerciseName: "Squat")
+                .previewLayout(.sizeThatFits)
+        }
+     
     }
 }
+
