@@ -13,6 +13,7 @@
 		4963049E297CA75A00595830 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4963049D297CA75A00595830 /* RatingView.swift */; };
 		496304A0297EEDDA00595830 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4963049F297EEDDA00595830 /* HistoryView.swift */; };
 		496304A2298041EA00595830 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496304A1298041EA00595830 /* SuccessView.swift */; };
+		499EFEC32983364A00DFEE4B /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499EFEC22983364A00DFEE4B /* Exercise.swift */; };
 		CD30C924251474DC0049DB93 /* HIITFitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD30C923251474DC0049DB93 /* HIITFitApp.swift */; };
 		CD30C926251474DC0049DB93 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD30C925251474DC0049DB93 /* ContentView.swift */; };
 		CD30C928251474DD0049DB93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD30C927251474DD0049DB93 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		4963049D297CA75A00595830 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		4963049F297EEDDA00595830 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		496304A1298041EA00595830 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
+		499EFEC22983364A00DFEE4B /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		CD30C920251474DC0049DB93 /* HIITFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HIITFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD30C923251474DC0049DB93 /* HIITFitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIITFitApp.swift; sourceTree = "<group>"; };
 		CD30C925251474DC0049DB93 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				CD30C923251474DC0049DB93 /* HIITFitApp.swift */,
 				CD30C93D25147A8C0049DB93 /* DateExtension.swift */,
 				CD30C93E25147A8C0049DB93 /* ImageExtension.swift */,
+				499EFEC22983364A00DFEE4B /* Exercise.swift */,
 				49099A9829789A21009F3B90 /* Views */,
 				CD30C927251474DD0049DB93 /* Assets.xcassets */,
 				CD30C94D25147B420049DB93 /* Videos */,
@@ -225,6 +228,7 @@
 				CD30C926251474DC0049DB93 /* ContentView.swift in Sources */,
 				4963049E297CA75A00595830 /* RatingView.swift in Sources */,
 				CD30C93F25147A8C0049DB93 /* DateExtension.swift in Sources */,
+				499EFEC32983364A00DFEE4B /* Exercise.swift in Sources */,
 				CD30C924251474DC0049DB93 /* HIITFitApp.swift in Sources */,
 				CD30C94025147A8C0049DB93 /* ImageExtension.swift in Sources */,
 				496304A0297EEDDA00595830 /* HistoryView.swift in Sources */,
