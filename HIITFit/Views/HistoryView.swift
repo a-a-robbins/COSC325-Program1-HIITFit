@@ -3,8 +3,7 @@ import SwiftUI
 
 struct HistoryView: View {
     @Binding var showHistory: Bool
-    
-    let history = HistoryStore()
+    @EnvironmentObject var history: HistoryStore
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
@@ -42,5 +41,6 @@ struct HistoryView: View {
 struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
         HistoryView(showHistory: .constant(true))
+            .environmentObject(HistoryStore())
     }
 }
