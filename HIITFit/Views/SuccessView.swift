@@ -13,7 +13,7 @@ struct SuccessView: View {
       """
     
     var body: some View {
-        ZStack(alignment: .bottom) {
+        ZStack {
             VStack {
                 Image(systemName: "hand.raised.fill")
                     .resizedToFill(width: 75, height: 75)
@@ -21,18 +21,19 @@ struct SuccessView: View {
                 Text("High Five!")
                     .font(.largeTitle)
                     .fontWeight(.heavy)
-                    .padding(.top)
                 Text(message)
                     .multilineTextAlignment(.center)
                     .foregroundColor(.gray)
-                //FIXME: should be at the bottom
-                Button("Continue") {
-                    selectedTab = 9
-                    presentationMode.wrappedValue.dismiss()
-                }
-                .font(.title)
-                .padding(.trailing)
             }
+                VStack {
+                    Spacer()
+                    Button("Continue") {
+                        selectedTab = 9
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                    .font(.title)
+                    .padding(.bottom)
+                }
         }
     }
 }
