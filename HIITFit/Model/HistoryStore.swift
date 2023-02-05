@@ -60,7 +60,7 @@ class HistoryStore: ObservableObject {
     func load() throws {
 //        Use a separate guard-let to get data, and just return if that fails.  Then continue as before
         guard let plistExists = getURL()
-        else  { return }ç
+        else  { return }
         guard let dataURL = getURL()
         else {
             throw FileError.urlFailure
