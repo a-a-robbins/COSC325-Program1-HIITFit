@@ -6,18 +6,35 @@ import SwiftUI
 struct WelcomeView: View {
     @State private var showHistory = false
     @Binding var selectedTab: Int
+    
+    var getStartedButton: some View {
+        RaisedButton(buttonText: "Get Started") {
+            selectedTab = 0
+        }
+        .padding()
+    }
+    var historyButton: some View {
+        Button(
+            action: {
+                showHistory = true
+            }, label: {
+                Text("History")
+                    .fontWeight(.bold)
+                    .padding([.leading, .trailing], 5)
+            })
+        .padding(.bottom, 10)
+        .buttonStyle(EmbossedButtonStyle())
+    }
+    
     var body: some View {
         ZStack {
             VStack {
                 HeaderView(selectedTab: $selectedTab, titleText: "Welcome")
                 Spacer()
-                Button("History") {
-                    showHistory.toggle()
-                }
-                .sheet(isPresented: $showHistory) {
-                    HistoryView(showHistory: $showHistory)
-                }
-                    .padding(.bottom)
+                historyButton
+                    .sheet(isPresented: $showHistory) {
+                        HistoryView(showHistory: $showHistory)
+                    }
             }
             VStack {
                 HStack {
@@ -29,25 +46,10 @@ struct WelcomeView: View {
                             .font(.headline)
                     }
                     Image("step-up")
-//                        .resizable()
-//                        .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-//                        .frame(width: 240.0, height: 240.0)
-                    //replacing above with extended code
                         .resizedToFill(width: 240, height: 240)
                         .clipShape(Circle())
                 }
-                Button(action: {selectedTab = 0}) {
-                    Text("Get Started")
-                    Image(systemName: "arrow.right.circle")
-                    //below did not display the arrow image
-//                    Label("Get Started", systemImage: "arrow.right.cirlce")
-                }
-                .font(.title2)
-                .padding()
-                .background(
-                    RoundedRectangle(cornerRadius: 20)
-                        .stroke(Color.gray, lineWidth: 2)
-                )
+                getStartedButton
             }
         }
     }

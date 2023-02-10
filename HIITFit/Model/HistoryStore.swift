@@ -9,6 +9,7 @@ struct ExerciseDay: Identifiable {
 
 class HistoryStore: ObservableObject {
     @Published var exerciseDays: [ExerciseDay] = []
+    
     init(withChecking: Bool) throws {
         #if DEBUG
         //createDevData()
@@ -58,15 +59,15 @@ class HistoryStore: ObservableObject {
     }
     
     func load() throws {
-//        Use a separate guard-let to get data, and just return if that fails.  Then continue as before
-        guard let plistExists = getURL()
-        else  { return }
         guard let dataURL = getURL()
         else {
             throw FileError.urlFailure
         }
+        //challenge - ignore load failure if empty list --- jump out of method
+        guard let data = try? Data(contentsOf: dataURL)
+        else {return}
+        //
         do {
-          let data = try Data(contentsOf: dataURL)
           let plistData = try PropertyListSerialization.propertyList(
                 from: data,
                 options: [],

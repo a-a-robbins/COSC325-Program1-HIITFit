@@ -5,7 +5,6 @@ import SwiftUI
 
 struct ContentView: View {
     @SceneStorage("selectedTab") private var selectedTab = 9
-    //@Binding var showAlert: Bool
     
     var body: some View {
         TabView (selection: $selectedTab) {
@@ -17,17 +16,6 @@ struct ContentView: View {
             }
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-        //HELP -- FIXME
-//        .alert(isPresented: $showAlert) {
-//            Alert(
-//                title: Text("History"),
-//                message: Text (
-//                """
-//                Unfortunately we can't load your past history.
-//                Email support:
-//                    support@xyz.com
-//                """))
-//        }
     }
 }
 
