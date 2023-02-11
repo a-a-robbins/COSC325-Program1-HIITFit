@@ -20,6 +20,7 @@ struct HIITFitApp: App {
         }
         _historyStore = StateObject(wrappedValue: historyStore)
     }
+    
   var body: some Scene {
     WindowGroup {
       ContentView()
@@ -28,6 +29,16 @@ struct HIITFitApp: App {
                 print(FileManager.default.urls(
                     for: .documentDirectory,
                     in: .userDomainMask))
+            }
+            .alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text("History"),
+                    message: Text (
+                    """
+                    Unfortunately we can't load your past history.
+                    Email support:
+                        support@xyz.com
+                    """))
             }
     }
   }

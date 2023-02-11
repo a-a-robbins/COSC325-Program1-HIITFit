@@ -13,7 +13,23 @@ struct ExerciseView: View {
     @EnvironmentObject var history: HistoryStore
     
     let index: Int
-    
+    var historyButton: some View {
+        Button(
+            action: {
+                showHistory = true
+            }, label: {
+                Text("History")
+                    .fontWeight(.bold)
+                    .padding([.leading, .trailing], 5)
+            })
+        .padding(.bottom, 10)
+        .buttonStyle(EmbossedButtonStyle())
+    }
+    var startExerciseButton: some View {
+        RaisedButton(buttonText: "Start Exercise") {
+            showTimer.toggle()
+        }
+    }
     var lastExercise: Bool {
         index + 1 == Exercise.exercises.count
     }
@@ -33,9 +49,7 @@ struct ExerciseView: View {
                         .foregroundColor(.red)
                 }
                 HStack(spacing: 150) {
-                    Button("Start Exercise") {
-                        showTimer.toggle()
-                    }
+                    startExerciseButton
                     Button("Done") {
                         history.addDoneExercise(Exercise.exercises[index].exerciseName)
                         timerDone = false
@@ -60,12 +74,10 @@ struct ExerciseView: View {
                 Spacer()
                 RatingView(exerciseIndex: index)
                     .padding()
-                Button("History") {
-                    showHistory.toggle()
-                }
-                .sheet(isPresented: $showHistory) {
-                    HistoryView(showHistory: $showHistory)
-                }
+                historyButton
+                    .sheet(isPresented: $showHistory) {
+                        HistoryView(showHistory: $showHistory)
+                    }
                     .padding(.bottom)
             }
         }
